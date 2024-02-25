@@ -20,5 +20,9 @@ This is a new proyect, that im starting to work on to have a faster installation
 To start just use this simple command as root. 
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/garciaqjesus/pterodactyl-installer-x/main/pterodactyl-installer-x.sh)
+wget https://raw.githubusercontent.com/garciaqjesus/pterodactyl-installer-x/main/pterodactyl-installer-x.sh
+
+chmod +x pterodactyl-installer-x.sh
+
+./pterodactyl-installer-x.sh
 ```
