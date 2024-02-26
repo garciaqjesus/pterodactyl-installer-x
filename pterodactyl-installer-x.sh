@@ -8,31 +8,45 @@
 # Comments      :-                                                              #                                                            #                                                                               #                                         
 #################################################################################        
 
+#----------------------------------
+# Colors codes for console output
+#----------------------------------
+GREEN="\033[1;32m";
+RED='\033[0;31m'
+
+BoldWhite='\033[1;37m'
+BoldCyan='\033[1;36m'
+NoColor='\033[0m'
+
+# ==========================================
+# Global variables used in the script
+# ==========================================
+
+version = "0"
+
+# Get the client's local IP address
+client_ip=$(hostname -I | cut -d ' ' -f1)
+
 # ==========================================
 #  Just a simple start 
 # ==========================================
 
 banner(){
-  clear
-    echo ""
-    echo -e "   
-                    
-                     Y8888b,
-                   ,oA8888888b,
-             ,aaad8888888888888888bo,
-          ,d888888888888888888888888888b,
-        ,888888888888888888888888888888888b,
-       d8888888888888888888888888888888888888,
-      d888888888888888888888888888888888888888b
-     d888888P                      Y888888888888,
-     88888P                     Ybaaaa8888888888l
-    a8888                        Y8888P   V888888
-  d8888888a                                 Y8888
- AY/    \Y8b                                   Y8b
- Y        YP                                    
- 
- "
-    echo ""
+    clear;
+    echo -e "${GREEN}                                                                              ${NoColor}";
+    echo -e "${GREEN}█████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ ${NoColor}";
+    echo -e "${GREEN}                                                                              ${NoColor}";
+    echo -e "${GREEN}                             ██  ██████   █████                               ${NoColor}";
+    echo -e "${GREEN}                             ██ ██       ██   ██                              ${NoColor}";
+    echo -e "${GREEN}                             ██ ██   ███ ███████                              ${NoColor}";
+    echo -e "${GREEN}                        ██   ██ ██    ██ ██   ██                              ${NoColor}";
+    echo -e "${GREEN}                         █████   ██████  ██   ██                              ${NoColor}";
+    echo -e "${GREEN}                                                                              ${NoColor}";
+    echo -e "${GREEN}                     EASY PTERODACTYL INSTALLER SCRIPT                        ${NoColor}";
+    echo -e "${BoldCyan}==============================================================================${NoColor}"
+    echo -e "${BoldCyan} IP: $client_ip || VERSION: $version                                           ${NoColor}";
+    echo -e "${BoldCyan} STORAGE DIRECTORY: $storage_directory || CREATED BY THEXHOSTING.COM           ${NoColor}";
+    echo -e "${BoldCyan}==============================================================================${NoColor}";
 }
 
 # ==========================================
@@ -46,3 +60,21 @@ if ! [ -x "$(command -v curl)" ]; then
 fi
 
 # dectect for errors 
+
+# ==========================================
+#  PTERODACTYL INSTALLER SCRIPT - MAIN MENU
+# ==========================================
+
+echo -e "─────────────────────────────────────────────────────────"
+echo -e "${BoldWhite}                  WHAT WOULD YOU LIKE TO DO?                   ${NoColor}"
+echo -e "─────────────────────────────────────────────────────────"
+echo -e ""
+echo -e ""
+echo -e "    ${RED}1.${NoColor} Install Pterodactyl Panel"
+echo -e "    ${RED}2.${NoColor} Install Pterodactyl Wings"
+echo -e "    ${RED}3.${NoColor} Create Public MYSQL USER"
+echo -e "    ${RED}4.${NoColor} Install PHPMYADMIN Panel"
+echo -e "    ${RED}5.${NoColor} Install STATUS Panel (KUMA)"
+echo -e "    ${RED}6.${NoColor} Exit"
+echo -e ""
+read -p "Select an option (1-4): " menu_option

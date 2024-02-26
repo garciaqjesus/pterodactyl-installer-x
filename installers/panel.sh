@@ -14,6 +14,23 @@
 # ==========================================
 
 
+# ==========================================
+#  SCRIPT REQUIEREMENTS 
+# ==========================================
+#  MYSQL_LOCAL_NAME (Database name (panel))
+#  MYSQL_LOCAL_USER (Database username (pterodactyl))
+#  MYSQL_LOCAL_PASSWORD (Password (press enter to use randomly generated password))
+#  TIMEZONE (Select timezone [Europe/Stockholm])
+#  SSL_EMAIL (Provide the email address that will be used to configure Let's Encrypt and Pterodactyl)
+#  ADMIN_EMAIL (Email address for the initial admin account)
+#  ADMIN_USERNAME (Username for the initial admin account)
+#  ADMIN_FIRST_NAME (First name for the initial admin account:)
+#  ADMIN_LAST_NAME (Last name for the initial admin account:)
+#  ADMIN_PASSWORD (Password for the initial admin account)
+#  ADMIN_SAFE_INFO (YES/NO)
+#  PANEL_LINK (Set the FQDN of this panel (panel.example.com))
+#  (Do you want to automatically configure HTTPS using Let's Encrypt?) (y/n)
+# ==========================================
 
 # ==========================================
 #  Dependencies
@@ -96,3 +113,5 @@ panel_generate_key(){
     php artisan key:generate --force
 }
  
+
+ #REMOVE WHEN ITS DONE
